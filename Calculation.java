@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Calc{
+public class Calculation{
 
 public void simpleaddition(){
 Scanner scan=new Scanner(System.in);
@@ -10,7 +10,7 @@ int r=x+q;
 System.out.println("output=" +r);
 }
 public static void main(String args[]){
-Calc c=new Calc();
+Calculation c=new Calculation();
 c.simpleaddition();
 }
 }
