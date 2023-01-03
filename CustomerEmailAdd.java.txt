@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+class Data {
+    int id;
+    int cusId;
+    String Email;
+    Boolean Default;
+    public Data(int id, int cusId, String Email, Boolean Default) {
+        this.id = id;
+        this.cusId = cusId;
+        this.Email = Email;
+        this.Default = Default;
+    }
+    public String toString(){
+        return id+" "+cusId+" "+Email;
+    }
+
+ }
+ public class CustomerEmailAdd{
+     public static void main(String[] args) {
+
+
+         List<Data> l = new ArrayList<Data>();
+//         List<String> NEWlIST = new ArrayList<>();
+         l.add(new Data(123,1,"Ranjith.ranji@email.com",Boolean.TRUE));
+         l.add(new Data(124,1,"Ranjith.ash23@email.com",Boolean.FALSE));
+         l.add(new Data(125,1,"Ranjith.ash34@email.com",Boolean.FALSE));
+         l.add(new Data(126,1,"Ranjith.ash56@email.com",Boolean.FALSE));
+         
+
+
+        String  email = l.stream().filter(c-> c.Default==Boolean.FALSE )
+                .map(c->c.Email)
+                .collect(Collectors.joining(""));
+//          .map(c->c.Email)
+//                 .findFirst()
+//                .orElse(null);
+        System.out.println(email);
+     }
+ }
